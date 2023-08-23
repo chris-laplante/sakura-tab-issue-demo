@@ -3,9 +3,13 @@
 <%@include file="/include-internal.jsp"%>
 <%@ page import="jetbrains.buildServer.web.util.WebUtil" %>
 <jsp:useBean id="token" scope="request" type="java.lang.String"/>
+<jsp:useBean id="myKey" scope="request" type="java.lang.String"/>
 <c:set var="sakuraUI" value='<%= WebUtil.sakuraUIOpened(request) %>'/>
 
+<p>My key: <c:out value="${myKey}" /></p>
+
 <c:out value="${token}" />
+
 <c:choose>
   <c:when test="${sakuraUI == false}">
     <div id="plugin-container"></div>

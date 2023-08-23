@@ -7,6 +7,7 @@ import jetbrains.buildServer.web.openapi.SimpleCustomTab;
 import org.jetbrains.annotations.NotNull;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 
 public class SakuraUIBTPluginPage extends SimpleCustomTab {
@@ -21,6 +22,12 @@ public class SakuraUIBTPluginPage extends SimpleCustomTab {
         register();
         addJsFile(descriptor.getPluginResourcesPath("js/main.js"));
         addCssFile(descriptor.getPluginResourcesPath("css/styles.css"));
+    }
+
+    @Override
+    public void fillModel(@NotNull Map<String, Object> model, @NotNull HttpServletRequest request) {
+        model.put("myKey", "Sakura tab");
+        super.fillModel(model, request);
     }
 
     @Override
