@@ -1,0 +1,5 @@
+.controlled-plugin-wrapper {
+    color: var(--ring-button-primary-background-color);
+    display: inline;
+    word-break: break-all;
+}
